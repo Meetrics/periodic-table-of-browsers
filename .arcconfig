@@ -1,0 +1,5 @@
+{
+ "project.name" : "periodic-table-of-browsers",
+ "phabricator.uri" : "https://phabricator.meetrics.de/",
+ "history.immutable": true
+}
