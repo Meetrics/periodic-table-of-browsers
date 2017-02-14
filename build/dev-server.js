@@ -10,6 +10,11 @@ var path = require('path')
 var express = require('express')
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
+var schema = require('../.dist/schema.js')
+
+console.log(schema)
+var graphqlHTTP = require('express-graphql')
+
 var webpackConfig = process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
   : require('./webpack.dev.conf')
@@ -49,6 +54,11 @@ Object.keys(proxyTable).forEach(function (context) {
   }
   app.use(proxyMiddleware(options.filter || context, options))
 })
+
+app.use('/graphql/', graphqlHTTP({
+  schema: schema,
+  graphiql: true
+}));
 
 // handle fallback for HTML5 history API
 app.use(require('connect-history-api-fallback')())

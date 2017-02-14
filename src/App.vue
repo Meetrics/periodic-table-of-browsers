@@ -6,9 +6,23 @@
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  var client = require('graphql-client')({
+    url: 'http://localhost:8080/graphql',
+    headers: {}
+  })
+
+  client.query(`
+  query {
+    browsers{
+      name
+    }
+  }`).then(function (body) {
+    console.log(body)
+  })
+
+  export default {
+    name: 'app'
+  }
 </script>
 
 <style>
