@@ -5,7 +5,7 @@
   "author": "Meetrics",
   "private": true,
   "scripts": {
-    "dev": " babel ./server -d .dist --ignore=\"node_modules\" && node build/dev-server.js",
+    "dev": " babel ./server -d .dist --ignore=\"node_modules\" && npm start | node build/dev-server.js",
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
@@ -15,14 +15,17 @@
   },
   "dependencies": {
     "ansi-html": "0.0.7",
+    "apollo-client": "^0.5.26",
     "babel": "^6.5.2",
     "express-graphql": "^0.6.3",
     "graphql": "^0.9.1",
     "graphql-client": "^1.1.0",
+    "graphql-tag": "^1.2.4",
     "html-entities": "^1.2.0",
     "strip-ansi": "^3.0.1",
     "underscore": "^1.8.3",
     "vue": "^2.1.10",
+    "vue-apollo": "^1.3.1",
     "vue-router": "^2.2.0"
   },
   "devDependencies": {
@@ -86,7 +89,8 @@
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.16.1",
-    "webpack-merge": "^2.6.1"
+    "webpack-merge": "^2.6.1",
+    "whatwg-fetch": "^2.0.2"
   },
   "engines": {
     "node": ">= 4.0.0",

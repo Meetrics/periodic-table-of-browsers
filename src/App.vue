@@ -6,23 +6,35 @@
 </template>
 
 <script>
-  var client = require('graphql-client')({
-    url: 'http://localhost:8080/graphql',
-    headers: {}
-  })
+import gql from 'graphql-tag';
 
-  client.query(`
+const browsersQuery = gql`
   query {
-    browsers{
+    browsers {
       name
     }
-  }`).then(function (body) {
-    console.log(body)
-  })
+  }`;
 
-  export default {
-    name: 'app'
+export default {
+
+  data: () => ({
+    browsers: []
+  }),
+
+  apollo: {
+    // Local state 'posts' data will be updated
+    // by the GraphQL query result
+    browsers: {
+      // GraphQL query
+      query: browsersQuery,
+      // Will update the 'loading' attribute
+      // +1 when a new query is loading
+      // -1 when a query is completed
+      loadingKey: 'loading',
+    },
   }
+}
+
 </script>
 
 <style>
