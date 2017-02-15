@@ -1,27 +1,32 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <span>{{browsers[0].name}}</span>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-  var client = require('graphql-client')({
-    url: 'http://localhost:8080/graphql',
-    headers: {}
-  })
+  import gql from 'graphql-tag'
 
-  client.query(`
-  query {
-    browsers{
-      name
+  const browserQuery = gql`
+    query {
+      browsers {
+        name
+      }
     }
-  }`).then(function (body) {
-    console.log(body)
-  })
+  `
 
   export default {
-    name: 'app'
+    name: 'app',
+    data: () => ({
+      browsers: []
+    }),
+    apollo: {
+      browsers: {
+        query: browserQuery
+      }
+    }
   }
 </script>
 
