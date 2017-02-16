@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <span>{{browsers[0].name}}</span>
     <router-view></router-view>
+    <div class="browsers">
+      <ul class="browsers__list">
+     <li v-for="browser in browsers">{{browser.name}}</li>
+     </ul>
+    </div>
   </div>
 </template>
 
@@ -38,5 +42,10 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.browsers__list {
+  list-style-type: none;
+  cursor: pointer;
 }
 </style>
