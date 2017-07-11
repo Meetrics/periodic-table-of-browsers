@@ -1,17 +1,21 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <browser-overview></browser-overview>
   </div>
 </template>
 
 <script>
+import BrowserOverview from './browsers/BrowserOverview'
+
 export default {
-  name: 'hello',
+  name: 'PeriodicTableOfBrowsers',
   data () {
     return {
       msg: 'Welcome to the Periodic Table of Browsers Project'
     }
-  }
+  },
+  components: { BrowserOverview }
 }
 </script>
 
