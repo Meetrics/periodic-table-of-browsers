@@ -1,6 +1,6 @@
 <template>
   <div class="search-input">
-    <input type="text" @keyup="onQuery">
+    <input type="text" @keyup="onQuery" placeholder="Search">
   </div>
 </template>
 
