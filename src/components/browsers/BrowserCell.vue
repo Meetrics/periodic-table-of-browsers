@@ -12,7 +12,7 @@ export default {
 <style scoped>
 .version {
   width: 50px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   background-color: #6495ed;
   border-radius: 10px;
   margin-left: auto;

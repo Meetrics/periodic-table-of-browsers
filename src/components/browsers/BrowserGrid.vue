@@ -17,6 +17,7 @@
 
 <script>
 import BrowserCell from './BrowserCell'
+import filters from '../../utils/filters'
 
 export default {
   name: 'BrowserGrid',
@@ -28,11 +29,7 @@ export default {
     data: Array,
     query: String
   },
-  filters: {
-    capitalize (str) {
-      return str.charAt(0).toUpperCase() + str.slice(1)
-    }
-  }
+  filters
 }
 </script>
 
