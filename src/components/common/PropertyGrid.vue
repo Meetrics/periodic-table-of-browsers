@@ -1,11 +1,9 @@
 <template>
-  <table>
-    <tr v-for="row in rows">
-      <td v-for="col in row">
-        <browser-property-cell :col="col"></browser-property-cell>
-      </td>
-    </tr>
-  </table>
+  <div class="grid">
+    <div v-for="property in data">
+      <property-cell :property="property"></property-cell>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -17,33 +15,13 @@ export default {
   name: 'PropertyGrid',
   components: { PropertyCell },
   props: {
-    columnsPerRow: Number,
     data: Array
-  },
-  computed: {
-    rows () {
-      let result = []
-      let columnsPerRow = this.columnsPerRow || 3
-
-      for (let i = 0; i < this.data.length; i += columnsPerRow) {
-        result.push(this.data.slice(i, i + this.columnsPerRow))
-      }
-
-      return result
-    }
   }
 }
 </script>
 <style scoped>
-table {
-  border-spacing: 10px;
-  border-collapse: separate;
-  margin-left: auto;
-  margin-right: auto;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
-
-th, td {
-  padding: 10px;
-}
-
 </style>

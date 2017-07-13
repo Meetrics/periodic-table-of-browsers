@@ -2,7 +2,7 @@
   <div>
     <h2>{{title}}</h2>
     <search-component @query="handleSearch"></search-component>
-    <browser-property-grid :data="data"></browser-property-grid>
+    <property-grid :data="data"></property-grid>
   </div>
 </template>
 

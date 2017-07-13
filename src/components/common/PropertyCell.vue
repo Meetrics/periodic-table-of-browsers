@@ -1,14 +1,14 @@
 <template>
   <span>
-    <span class="title">{{col.name}}:</span>
-    <span>{{col.type}}</span>
+    <span class="title">{{property.name}}:</span>
+    <span>{{property.type}}</span>
   </span>
 </template>
 <script>
 export default {
   name: 'PropertyCell',
   props: {
-    col: Object
+    property: Object
   }
 }
 </script>
