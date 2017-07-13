@@ -1,19 +1,19 @@
 <template>
   <div class="overview">
     <browser-overview :browsers="browsers"></browser-overview>
-    <browser-property-overview :title="'Document Properties'" :data="documentProperties"></browser-property-overview>
-    <browser-property-overview :title="'Window Properties'" :data="documentProperties"></browser-property-overview>
+    <property-overview :title="'Document Properties'" :data="documentProperties"></property-overview>
+    <property-overview :title="'Window Properties'" :data="windowProperties"></property-overview>
   </div>
 </template>
 
 <script>
 import BrowserOverview from './browsers/BrowserOverview'
-import BrowserPropertyOverview from './common/BrowserPropertyOverview'
+import PropertyOverview from './common/PropertyOverview'
 import mocks from './mocks'
 
 export default {
   name: 'PeriodicTableOfBrowsers',
-  components: { BrowserOverview, BrowserPropertyOverview },
+  components: { BrowserOverview, PropertyOverview },
   data () {
     return {
       documentProperties: mocks.documentProperties,

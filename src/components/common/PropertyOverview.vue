@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import BrowserPropertyGrid from './BrowserPropertyGrid'
+import PropertyGrid from './PropertyGrid'
 import SearchComponent from '../common/SearchComponent'
 
 export default {
-  name: 'BrowserPropertyOverview',
+  name: 'PropertyOverview',
   components: {
-    BrowserPropertyGrid,
+    PropertyGrid,
     SearchComponent
   },
   props: {

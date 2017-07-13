@@ -3,7 +3,7 @@
     <div class="header">
       <div class="logo">
         <img src="./assets/logo.png">
-        <span class="title">Period Table of Browsers</span>
+        <span class="title">Periodic Table of Browsers</span>
       </div>
     </div>
     <div id="content">

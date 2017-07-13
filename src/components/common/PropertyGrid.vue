@@ -9,13 +9,13 @@
 </template>
 
 <script>
-import BrowserPropertyCell from './BrowserPropertyCell'
+import PropertyCell from './PropertyCell'
 /**
  * Component for rendering generic browser properties in a table (document and window)
  */
 export default {
-  name: 'BrowserPropertyGrid',
-  components: { BrowserPropertyCell },
+  name: 'PropertyGrid',
+  components: { PropertyCell },
   props: {
     columnsPerRow: Number,
     data: Array
@@ -23,15 +23,10 @@ export default {
   computed: {
     rows () {
       let result = []
-      let workingArray = []
       let columnsPerRow = this.columnsPerRow || 3
 
-      for (let i = 0; i < this.data.length; i++) {
-        if (i % columnsPerRow === 0 || i === this.data.length - 1) {
-          result.push(workingArray)
-          workingArray = []
-        }
-        workingArray.push(this.data[i])
+      for (let i = 0; i < this.data.length; i += columnsPerRow) {
+        result.push(this.data.slice(i, i + this.columnsPerRow))
       }
 
       return result
