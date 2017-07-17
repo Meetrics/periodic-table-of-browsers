@@ -1,26 +1,26 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
-import router from './router'
-import ApolloClient, { createNetworkInterface } from 'apollo-client'
-import VueApollo from 'vue-apollo'
+import Vue from "vue";
+import App from "./App";
+import router from "./router";
+import ApolloClient, { createNetworkInterface } from "apollo-client";
+import VueApollo from "vue-apollo";
 
 // Create the apollo client
 const apolloClient = new ApolloClient({
   networkInterface: createNetworkInterface({
-    uri: 'http://localhost:4000/graphql'
+    uri: "http://localhost:4000/graphql"
   })
-})
+});
 
 Vue.use(VueApollo, {
   apolloClient
-})
+});
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: "#app",
   router,
-  template: '<App/>',
+  template: "<App/>",
   components: { App }
-})
+});
