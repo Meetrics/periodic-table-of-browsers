@@ -1,8 +1,8 @@
 <template>
   <div class="overview">
     <browser-overview :browsers="browsers"></browser-overview>
-    <property-overview :title=""Document Properties"" :data="documentProperties"></property-overview>
-    <property-overview :title=""Window Properties"" :data="windowProperties"></property-overview>
+    <property-overview :title="'Document Properties'" :data="documentProperties"></property-overview>
+    <property-overview :title="'Window Properties'" :data="windowProperties"></property-overview>
   </div>
 </template>
 
