@@ -7,11 +7,11 @@
 </template>
 
 <script>
-import PropertyGrid from './PropertyGrid'
-import SearchComponent from '../common/SearchComponent'
+import PropertyGrid from "./PropertyGrid";
+import SearchComponent from "../common/SearchComponent";
 
 export default {
-  name: 'PropertyOverview',
+  name: "PropertyOverview",
   components: {
     PropertyGrid,
     SearchComponent
@@ -22,8 +22,8 @@ export default {
   },
   methods: {
     handleSearch (value) {
-      console.log('handle search', value)
+      console.log("handle search", value);
     }
   }
-}
+};
 </script>

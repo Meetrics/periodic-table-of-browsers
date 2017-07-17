@@ -4,50 +4,50 @@
 export default {
   documentProperties: [
     {
-      name: 'referrer',
-      type: 'string'
+      name: "referrer",
+      type: "string"
     },
     {
-      name: 'getElementById',
-      type: 'Function'
+      name: "getElementById",
+      type: "Function"
     },
     {
-      name: 'querySelectorAll',
-      type: 'Function'
+      name: "querySelectorAll",
+      type: "Function"
     },
     {
-      name: 'defaultView',
-      type: 'Object'
+      name: "defaultView",
+      type: "Object"
     },
     {
-      name: 'location',
-      type: 'Object'
+      name: "location",
+      type: "Object"
     }
   ],
   windowProperties: [
     {
-      name: 'referrer',
-      type: 'string'
+      name: "referrer",
+      type: "string"
     },
     {
-      name: 'getElementById',
-      type: 'Function'
+      name: "getElementById",
+      type: "Function"
     },
     {
-      name: 'querySelectorAll',
-      type: 'Function'
+      name: "querySelectorAll",
+      type: "Function"
     },
     {
-      name: 'defaultView',
-      type: 'Object'
+      name: "defaultView",
+      type: "Object"
     },
     {
-      name: 'location',
-      type: 'Object'
+      name: "location",
+      type: "Object"
     }
   ],
   browsers: {
-    columns: ['internetexplorer', 'chrome', 'firefox', 'opera', 'edge'],
+    columns: ["internetexplorer", "chrome", "firefox", "opera", "edge"],
     data: [
       [6, 46, 21, 4, 12],
       [7, 47, 22, 5, 13],
@@ -57,4 +57,4 @@ export default {
       [11, 51, null, 9]
     ]
   }
-}
+};

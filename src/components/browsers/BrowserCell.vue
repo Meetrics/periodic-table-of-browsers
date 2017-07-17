@@ -3,11 +3,11 @@
 </template>
 <script>
 export default {
-  name: 'BrowserCell',
+  name: "BrowserCell",
   props: {
-    col: String
+    col: Number
   }
-}
+};
 </script>
 <style scoped>
 .version {

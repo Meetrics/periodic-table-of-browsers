@@ -7,11 +7,11 @@
 </template>
 
 <script>
-import BrowserGrid from './BrowserGrid'
-import SearchComponent from '../common/SearchComponent'
+import BrowserGrid from "./BrowserGrid";
+import SearchComponent from "../common/SearchComponent";
 
 export default {
-  name: 'BrowserOverview',
+  name: "BrowserOverview",
   components: {
     BrowserGrid,
     SearchComponent
@@ -23,12 +23,12 @@ export default {
     return {
       columns: this.browsers.columns,
       data: this.browsers.data
-    }
+    };
   },
   methods: {
     handleSearch (value) {
-      console.log('handle search', value)
+      console.log("handle search", value);
     }
   }
-}
+};
 </script>

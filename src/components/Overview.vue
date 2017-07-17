@@ -1,27 +1,27 @@
 <template>
   <div class="overview">
     <browser-overview :browsers="browsers"></browser-overview>
-    <property-overview :title="'Document Properties'" :data="documentProperties"></property-overview>
-    <property-overview :title="'Window Properties'" :data="windowProperties"></property-overview>
+    <property-overview :title=""Document Properties"" :data="documentProperties"></property-overview>
+    <property-overview :title=""Window Properties"" :data="windowProperties"></property-overview>
   </div>
 </template>
 
 <script>
-import BrowserOverview from './browsers/BrowserOverview'
-import PropertyOverview from './common/PropertyOverview'
-import mocks from './mocks'
+import BrowserOverview from "./browsers/BrowserOverview";
+import PropertyOverview from "./common/PropertyOverview";
+import mocks from "./mocks";
 
 export default {
-  name: 'PeriodicTableOfBrowsers',
+  name: "PeriodicTableOfBrowsers",
   components: { BrowserOverview, PropertyOverview },
   data () {
     return {
       documentProperties: mocks.documentProperties,
       windowProperties: mocks.windowProperties,
       browsers: mocks.browsers
-    }
+    };
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

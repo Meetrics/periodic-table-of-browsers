@@ -6,11 +6,11 @@
 </template>
 <script>
 export default {
-  name: 'PropertyCell',
+  name: "PropertyCell",
   props: {
     property: Object
   }
-}
+};
 </script>
 <style scoped>
 .title {

@@ -6,13 +6,13 @@
 
 <script>
 export default {
-  name: 'SearchComponent',
+  name: "SearchComponent",
   methods: {
     onQuery (event) {
-      this.$emit('query', event.value)
+      this.$emit("query", event.value);
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

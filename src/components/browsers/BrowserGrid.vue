@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import BrowserCell from './BrowserCell'
-import filters from '../../utils/filters'
+import BrowserCell from "./BrowserCell";
+import filters from "../../utils/filters";
 
 export default {
-  name: 'BrowserGrid',
+  name: "BrowserGrid",
   components: {
     BrowserCell
   },
@@ -30,7 +30,7 @@ export default {
     query: String
   },
   filters
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

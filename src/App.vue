@@ -18,7 +18,7 @@
 </template>
 
 <script>
-  import gql from 'graphql-tag'
+  import gql from "graphql-tag";
 
   const browserQuery = gql`
     query {
@@ -26,10 +26,10 @@
         name
       }
     }
-  `
+  `;
 
   export default {
-    name: 'app',
+    name: "app",
     data: () => ({
       browsers: []
     }),
@@ -38,12 +38,12 @@
         query: browserQuery
       }
     }
-  }
+  };
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
