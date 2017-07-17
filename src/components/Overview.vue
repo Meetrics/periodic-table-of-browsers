@@ -8,7 +8,7 @@
 
 <script>
 import BrowserOverview from "./browsers/BrowserOverview";
-import PropertyOverview from "./common/PropertyOverview";
+import PropertyOverview from "./properties/PropertyOverview";
 import mocks from "./mocks";
 
 export default {
