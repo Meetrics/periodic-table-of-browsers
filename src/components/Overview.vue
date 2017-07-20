@@ -9,17 +9,26 @@
 <script>
 import BrowserOverview from "./browsers/BrowserOverview";
 import PropertyOverview from "./properties/PropertyOverview";
-import mocks from "./mocks";
+import gql from "graphql-tag";
+
+const browserQuery = gql`
+  query {
+    browsers {
+      userAgent
+    }
+  }
+`;
 
 export default {
   name: "PeriodicTableOfBrowsers",
   components: { BrowserOverview, PropertyOverview },
-  data () {
-    return {
-      documentProperties: mocks.documentProperties,
-      windowProperties: mocks.windowProperties,
-      browsers: mocks.browsers
-    };
+  data: () => ({
+    browsers: []
+  }),
+  apollo: {
+    browsers: {
+      query: browserQuery
+    }
   }
 };
 </script>

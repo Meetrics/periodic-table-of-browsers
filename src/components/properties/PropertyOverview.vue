@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     handleSearch (value) {
-      console.log("handle search", value);
+      console.log("PropertyOverview: handle search", value);
     }
   }
 };

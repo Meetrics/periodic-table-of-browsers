@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     handleSearch (value) {
-      console.log("handle search", value);
+      console.log("BrowserOverview: handle search", value);
     }
   }
 };

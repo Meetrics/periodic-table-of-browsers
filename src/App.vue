@@ -8,36 +8,13 @@
     </div>
     <div id="content">
       <router-view></router-view>
-      <div class="browsers">
-        <ul class="browsers__list">
-      <li v-for="browser in browsers">{{browser.name}}</li>
-      </ul>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-  import gql from "graphql-tag";
-
-  const browserQuery = gql`
-    query {
-      browsers {
-        name
-      }
-    }
-  `;
-
   export default {
-    name: "app",
-    data: () => ({
-      browsers: []
-    }),
-    apollo: {
-      browsers: {
-        query: browserQuery
-      }
-    }
+    name: "app"
   };
 </script>
 

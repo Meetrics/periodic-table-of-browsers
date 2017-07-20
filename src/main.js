@@ -5,11 +5,12 @@ import App from "./App";
 import router from "./router";
 import ApolloClient, { createNetworkInterface } from "apollo-client";
 import VueApollo from "vue-apollo";
+import * as Constants from "./utils/constants";
 
 // Create the apollo client
 const apolloClient = new ApolloClient({
   networkInterface: createNetworkInterface({
-    uri: "http://localhost:4000/graphql"
+    uri: Constants.graphQLUri
   })
 });
 
