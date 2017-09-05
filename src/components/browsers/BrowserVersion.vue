@@ -30,7 +30,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .browser__version {
   width: 50px;
   padding: 10px 20px;

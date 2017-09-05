@@ -49,29 +49,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .browsers__list {
   display: flex;
   list-style-type: none;
   cursor: pointer;
-}
-
-.browser__item {
-  flex: auto;
-}
-
-.browser-versions-list {
-  list-style-type: none;
-}
-
-.browser__version {
-  width: 50px;
-  padding: 10px 20px;
-  margin-bottom: 7px;
-  background-color: #6495ed;
-  border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
 }
 </style>
 

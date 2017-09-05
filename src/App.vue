@@ -14,20 +14,8 @@
 </template>
 
 <script>
-  import gql from 'graphql-tag';
+  import { BROWSER_QUERY } from './utils/queries';
   import BrowserOverview from './components/browsers/BrowserOverview';
-
-  const browserQuery = gql`
-    query {
-      browsersUniq {
-        name
-        versions {
-          id
-          version
-        }
-      }
-    }
-  `;
 
   export default {
     name: 'app',
@@ -43,7 +31,7 @@
     },
     apollo: {
       browsersUniq: {
-        query: browserQuery
+        query: BROWSER_QUERY
       }
     }
   };

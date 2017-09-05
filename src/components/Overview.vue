@@ -6,42 +6,12 @@
 </template>
 
 <script>
-import gql from 'graphql-tag';
+import { WINDOW_PROPS_QUERY,
+  DOCUMENT_PROPS_QUERY,
+  BROWSER_HAS_WINDOW_PROPS_QUERY,
+  BROWSER_HAS_DOC_PROPS_QUERY } from '../utils/queries';
 import BrowserOverview from './browsers/BrowserOverview';
 import PropertyOverview from './properties/PropertyOverview';
-
-const windowPropsQuery = gql`
-  query {
-    windowProperties {
-      id
-      name
-      type
-    }
-  }
-`;
-const documentPropsQuery = gql`
-  query {
-    documentProperties {
-      id
-      name
-      type
-    }
-  }
-`;
-const browserHasWindowPropsQuery = gql`
-  query ($browserId: Int) {
-    browsers_has_WindowProperties(Browsers_id: $browserId) {
-      WindowProperties_id
-    }
-  }
-`;
-const browserHasDocPropsQuery = gql`
-  query ($browserId: Int) {
-    browsers_has_DocumentProperties(Browsers_id: $browserId) {
-      DocumentProperties_id
-    }
-  }
-`;
 
 export default {
   name: 'PeriodicTableOfBrowsers',
@@ -77,13 +47,13 @@ export default {
   },
   apollo: {
     windowProperties: {
-      query: windowPropsQuery
+      query: WINDOW_PROPS_QUERY
     },
     documentProperties: {
-      query: documentPropsQuery
+      query: DOCUMENT_PROPS_QUERY
     },
     browsers_has_WindowProperties: {
-      query: browserHasWindowPropsQuery,
+      query: BROWSER_HAS_WINDOW_PROPS_QUERY,
       variables () {
         return {
           browserId: this.browserId
@@ -91,7 +61,7 @@ export default {
       }
     },
     browsers_has_DocumentProperties: {
-      query: browserHasDocPropsQuery,
+      query: BROWSER_HAS_DOC_PROPS_QUERY,
       variables () {
         return {
           browserId: this.browserId
