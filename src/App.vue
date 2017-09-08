@@ -7,35 +7,31 @@
       </div>
     </div>
     <div id="content">
-      <router-view></router-view>
-      <div class="browsers">
-        <ul class="browsers__list">
-      <li v-for="browser in browsers">{{browser.name}}</li>
-      </ul>
-      </div>
+      <browser-overview :browsers="browsersUniq" @queryBrowser="handleActualBrowser"></browser-overview>
+      <router-view :browserId="browserId"></router-view>
     </div>
   </div>
 </template>
 
 <script>
-  import gql from "graphql-tag";
-
-  const browserQuery = gql`
-    query {
-      browsers {
-        name
-      }
-    }
-  `;
+  import { BROWSER_QUERY } from './utils/queries';
+  import BrowserOverview from './components/browsers/BrowserOverview';
 
   export default {
-    name: "app",
+    name: 'app',
     data: () => ({
-      browsers: []
+      browsersUniq: [],
+      browserId: null
     }),
+    components: { BrowserOverview },
+    methods: {
+      handleActualBrowser (browserId) {
+        this.browserId = browserId;
+      }
+    },
     apollo: {
-      browsers: {
-        query: browserQuery
+      browsersUniq: {
+        query: BROWSER_QUERY
       }
     }
   };
@@ -43,7 +39,7 @@
 
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
@@ -63,10 +59,5 @@
 .logo .title {
   font-size: 1.5em;
   vertical-align: text-top;
-}
-
-.browsers__list {
-  list-style-type: none;
-  cursor: pointer;
 }
 </style>

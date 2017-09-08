@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import PropertyCell from "./PropertyCell";
+import PropertyCell from './PropertyCell';
 /**
  * Component for rendering generic browser properties in a table (document and window)
  */
 export default {
-  name: "PropertyGrid",
+  name: 'PropertyGrid',
   components: { PropertyCell },
   props: {
     data: Array

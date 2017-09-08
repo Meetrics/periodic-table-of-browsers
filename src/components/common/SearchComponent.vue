@@ -1,15 +1,20 @@
 <template>
   <div class="search-input">
-    <input type="search" @keyup="onQuery" placeholder="Search">
+    <input type="search" v-model="query" placeholder="Search">
   </div>
 </template>
 
 <script>
 export default {
-  name: "SearchComponent",
-  methods: {
-    onQuery (event) {
-      this.$emit("query", event.value);
+  name: 'SearchComponent',
+  data () {
+    return {
+      query: ''
+    };
+  },
+  watch: {
+    query (query) {
+      this.$emit('query', query.toLowerCase());
     }
   }
 };
