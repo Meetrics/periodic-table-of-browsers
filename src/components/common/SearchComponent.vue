@@ -14,7 +14,7 @@ export default {
   },
   watch: {
     query (query) {
-      this.$emit('query', query);
+      this.$emit('query', query.toLowerCase());
     }
   }
 };
