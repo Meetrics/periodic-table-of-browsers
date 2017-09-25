@@ -4,8 +4,7 @@
     <ul class="browser-versions-list">
       <browser-version v-for="version in versions"
         :version="version"
-        :key="version.id"
-        @queryVersion="handleActualVersion"></browser-version>
+        :key="version.id"></browser-version>
     </ul>
   </div>
 </template>
@@ -26,11 +25,6 @@ export default {
       name: this.browser.name,
       versions: this.browser.versions
     };
-  },
-  methods: {
-    handleActualVersion (version) {
-      this.$emit('queryBrowser', version);
-    }
   }
 };
 </script>

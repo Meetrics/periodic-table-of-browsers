@@ -7,34 +7,38 @@
       </div>
     </div>
     <div id="content">
-      <browser-overview :browsers="browsersUniq" @queryBrowser="handleActualBrowser"></browser-overview>
+      <browser-overview :browsers="browsersUniq"></browser-overview>
       <router-view :browserId="browserId"></router-view>
     </div>
   </div>
 </template>
 
 <script>
-  import { BROWSER_QUERY } from './utils/queries';
-  import BrowserOverview from './components/browsers/BrowserOverview';
+import { BROWSER_QUERY } from './utils/queries';
+import BrowserOverview from './components/browsers/BrowserOverview';
+import EventBus from './utils/event-bus';
 
-  export default {
-    name: 'app',
-    data: () => ({
-      browsersUniq: [],
-      browserId: null
-    }),
-    components: { BrowserOverview },
-    methods: {
-      handleActualBrowser (browserId) {
-        this.browserId = browserId;
-      }
-    },
-    apollo: {
-      browsersUniq: {
-        query: BROWSER_QUERY
-      }
+export default {
+  name: 'app',
+  data: () => ({
+    browsersUniq: [],
+    browserId: null
+  }),
+  components: { BrowserOverview },
+  methods: {
+    handleActualBrowser (browserId) {
+      this.browserId = browserId;
     }
-  };
+  },
+  apollo: {
+    browsersUniq: {
+      query: BROWSER_QUERY
+    }
+  },
+  mounted: function () {
+    EventBus.$on('queryBrowser', this.handleActualBrowser);
+  }
+};
 </script>
 
 <style>

@@ -6,8 +6,7 @@
       <div class="browsers__list">
         <browser-column v-for="browser in filteredBrowsers"
           :browser="browser"
-          :key="browser.name"
-          @queryBrowser="handleActualBrowser"></browser-column>
+          :key="browser.name"></browser-column>
       </div>
     </div>
   </div>
@@ -41,9 +40,6 @@ export default {
   methods: {
     handleSearch (value) {
       this.search = value;
-    },
-    handleActualBrowser (version) {
-      this.$emit('queryBrowser', version);
     }
   }
 };
