@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import EventBus from '../../utils/event-bus';
 
 export default {
   name: 'BrowserVersion',
@@ -24,7 +25,7 @@ export default {
   methods: {
     actualiseData (e, version) {
       this.isActive = !this.isActive;
-      this.$emit('queryVersion', this.isActive ? version : null);
+      EventBus.$emit('queryBrowser', this.isActive ? version : null);
     }
   }
 };
